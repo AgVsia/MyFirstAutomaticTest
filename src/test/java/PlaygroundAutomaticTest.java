@@ -1,0 +1,168 @@
+import org.checkerframework.checker.units.qual.A;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class PlaygroundAutomaticTest {
+    private WebDriver driver;
+
+    @BeforeTest
+    public void beforeTest() {
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void searchingLocators() {
+
+        driver.navigate().to("https://testpages.herokuapp.com/styled/find-by-playground-test.html");
+        driver.findElement(By.xpath("html/body/div[1]/div[1]/a"));
+        driver.findElement(By.cssSelector("body > div:nth-child(1) > div.page-navigation > a"));
+        driver.findElement(By.linkText("Index"));
+        driver.findElement(By.partialLinkText("Inde"));
+        driver.findElement(By.xpath("/html/body/div[1]/h1"));
+        driver.findElement(By.xpath("//h1"));
+        driver.findElement(By.cssSelector("body > div:nth-child(1) > h1"));
+        driver.findElement(By.xpath("/html/body/div[1]/h1"));
+        driver.findElement(By.cssSelector("body > div:nth-child(1) > h1"));
+      //  driver.findElement(By.linkText("Find By Playground - Locator Examples"));
+       // driver.findElement(By.partialLinkText("Find By Play"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[1]"));
+        driver.findElement(By.cssSelector("#p1"));
+        driver.findElement(By.partialLinkText("pName1"));
+        driver.findElement(By.linkText("<name=pName1 class=normal>"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[2]"));
+        driver.findElement(By.cssSelector("#p2"));
+        driver.findElement(By.partialLinkText("pName2"));
+        driver.findElement(By.cssSelector("#p3"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[3]"));
+        driver.findElement(By.linkText("<name=pName3 class=normal>"));
+        driver.findElement(By.cssSelector("#p4"));
+        driver.findElement(By.xpath("//*[@id=\"p4\"]"));
+        driver.findElement(By.cssSelector("#p5"));
+        driver.findElement(By.xpath("//*[@id='p5']"));
+        driver.findElement(By.partialLinkText("<p id=\"p5\" name=\"pName5\" class=\"normal\">"));
+        driver.findElement(By.cssSelector("/html/body/div[2]/p[6]"));
+        driver.findElement(By.xpath("//*[@id=\"p6\"]"));
+        driver.findElement(By.linkText("<p id=\"p7\" name=\"pName7\" class=\"normal\">"));
+        driver.findElement(By.cssSelector("#p7"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[7]"));
+        driver.findElement(By.cssSelector("#p7"));
+        driver.findElement(By.cssSelector("#p8"));
+        driver.findElement(By.xpath("//*[@id=\"p8\"]"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[8]"));
+        driver.findElement(By.partialLinkText("<name=\"pName8\">"));
+        driver.findElement(By.cssSelector("#p9"));
+        driver.findElement(By.partialLinkText("<name=\"pName9\">"));
+        driver.findElement(By.cssSelector("#p10"));
+        driver.findElement(By.xpath("//*[@id=\"p10\"]"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[10]"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[11]"));
+        driver.findElement(By.cssSelector("#p11"));
+        driver.findElement(By.linkText("<p id=\"p11\" name=\"pName11\" class=\"normal\"> "));
+        driver.findElement(By.xpath("//*[@id=\"p12\"]"));
+        driver.findElement(By.cssSelector("#p12"));
+        driver.findElement(By.cssSelector("#p13"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[12]"));
+        driver.findElement(By.linkText("<p id=\"p13\" name=\"pName13\" class=\"normal\">  "));
+        driver.findElement(By.cssSelector("#p14"));
+        driver.findElement(By.xpath("//*[@id=\"p14\"]"));
+        driver.findElement(By.partialLinkText(" name=\"pName14\""));
+        driver.findElement(By.cssSelector("#p15"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[15]"));
+        driver.findElement(By.linkText("<p id=\"p15\" name=\"pName15\" class=\"normal\">   "));
+        driver.findElement(By.cssSelector("#p16"));
+        driver.findElement(By.xpath("//*[@id=\"p16\"]"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[16]"));
+        driver.findElement(By.partialLinkText("name=\"pName17\""));
+        driver.findElement(By.cssSelector("#p17"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[17]"));
+        driver.findElement(By.cssSelector("#p18"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[18]"));
+        driver.findElement(By.linkText("<p id=\"p19\" name=\"pName19\" class=\"normal\">"));
+        driver.findElement(By.xpath("//*[@id=\"p19\"]"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[19]"));
+        driver.findElement(By.cssSelector("#p20"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[20]"));
+        driver.findElement(By.partialLinkText("Name=\"pName20\""));
+        driver.findElement(By.cssSelector("#p21"));
+        driver.findElement(By.xpath("/html/body/div[2]/p[21]"));
+        driver.findElement(By.partialLinkText("name=\"pName22\""));
+        driver.findElement(By.xpath("//*[@id=\"p22\"]"));
+        driver.findElement(By.cssSelector("#p23"));
+        driver.findElement(By.partialLinkText("name=\"pName23"));
+        driver.findElement(By.xpath("//*[@id=\"p24\"]"));
+        driver.findElement(By.cssSelector("#p24"));
+        driver.findElement(By.xpath("//*[@id=\"p25\"]"));
+        driver.findElement(By.linkText("<p id=\"p25\" name=\"pName25\" class=\"normal\">"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/p"));
+        driver.findElement(By.cssSelector("#p26"));
+        driver.findElement(By.linkText(" name=\"pName26\" class=\"normal\">nested para text </p>"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/p"));
+        driver.findElement(By.cssSelector("#p27"));
+        driver.findElement(By.linkText("<p id=\"p28\" name=\"pName28\" class=\"normal\">nested para text</p>"));
+        driver.findElement(By.id("p28"));
+        driver.findElement(By.cssSelector("#p29"));
+        driver.findElement(By.xpath("//*[@id=\"p29\"]"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div/div/p"));
+        driver.findElement(By.cssSelector("#p30"));
+        driver.findElement(By.linkText("<p id=\"p31\" name=\"pName31\" class=\"normal\">nested para text </p>"));
+        driver.findElement(By.xpath("//*[@id=\"p31\"]"));
+        driver.findElement(By.cssSelector("#p31"));
+        driver.findElement(By.cssSelector("#p32"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div/div/div/p"));
+        driver.findElement(By.cssSelector("#33"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div/div/div/div/div/p"));
+        driver.findElement(By.cssSelector("#p34"));
+        driver.findElement(By.partialLinkText("name=\"pName34"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div/div/div/div/div/div/div/p"));
+        driver.findElement(By.xpath("//*[@id=\"p35\"]"));
+        driver.findElement(By.cssSelector("#p36"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/p"));
+        driver.findElement(By.cssSelector("#p37"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div/p"));
+        driver.findElement(By.cssSelector("#p38"));
+        driver.findElement(By.partialLinkText("//*[@id=\"p39\"]"));
+        driver.findElement(By.partialLinkText("name=\"pName39\""));
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/p"));
+        driver.findElement(By.xpath("//*[@id=\"p40\"]"));
+        driver.findElement(By.cssSelector("#p41"));
+        driver.findElement(By.xpath("//*[@id=\"p41\"]"));
+        driver.findElement(By.xpath("//*[@id=\"a26\"]"));
+        driver.findElement(By.cssSelector("#a27"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[3]/a"));
+        driver.findElement(By.id("id=\"a29\""));
+        driver.findElement(By.partialLinkText("<a href=\"#pName4\" id=\"a30\" name=\"aName30\" class=\"normal\">jump to para 4 </a>"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[6]/a"));
+        driver.findElement(By.partialLinkText("name=\"aName32\""));
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[8]/a"));
+        driver.findElement(By.cssSelector("#a33"));
+        driver.findElement(By.xpath("#//*[@id=\"a34\"]"));
+        driver.findElement(By.linkText("<a href=\"#pName9\" id=\"a35\" name=\"aName35\" class=\"normal\">jump to para 9 </a>"));
+        driver.findElement(By.cssSelector("#a36"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[12]/a"));
+        driver.findElement(By.id("id=\"a38\""));
+        driver.findElement(By.xpath("//*[@id=\"a39\"]"));
+        driver.findElement(By.cssSelector("#a40"));
+        driver.findElement(By.xpath("//*[@id=\"a41\"]"));
+        driver.findElement(By.linkText("<a href=\"#pName16\" id=\"a42\" name=\"aName42\" class=\"normal\">jump to para 16</a>"));
+        driver.findElement(By.cssSelector("#a43"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[19]/a"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[20]/a"));
+        driver.findElement(By.cssSelector("#a46"));
+        driver.findElement(By.partialLinkText(" name=\"aName47"));
+        driver.findElement(By.cssSelector("#a48"));
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/ul/li[24]/a"));
+        driver.findElement(By.cssSelector("#a50"));
+        driver.findElement(By.xpath("//*[@id=\"pre1\"]"));
+        driver.findElement(By.cssSelector("#pre1"));
+        driver.findElement(By.xpath("/html/body/div[3]/div/a[1]"));
+        driver.findElement(By.cssSelector("body > div:nth-child(3) > div > a:nth-child(1)"));
+        driver.findElement(By.xpath("/html/body/div[3]/div/a[2]"));
+
+
+    }
+}
+
