@@ -92,6 +92,7 @@ public class Zadanie3 {
         WebElement saveAccountInformationButton = driver.findElement(By.name("newAccount"));
         assertTrue(saveAccountInformationButton.isDisplayed());
         saveAccountInformationButton.click();
+
     }
 
     @AfterTest

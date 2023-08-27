@@ -26,15 +26,20 @@ public class Zadanie5 {
         Select select = new Select(selectElement);
 
         String initialLanguage = "english";
-        String selectedOption= select.getFirstSelectedOption().getText();
-        Assert.assertEquals(selectedOption,initialLanguage);
+        String expectedJapaneseLanguage = "japanese";
+        String selectedOption = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(selectedOption, initialLanguage);
 
         select.selectByVisibleText("japanese");
 
-        Assert.assertEquals(selectedOption,initialLanguage);
+        String selectedJapaneseOption = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(selectedJapaneseOption, expectedJapaneseLanguage);
+
         select.selectByVisibleText("english");
 
+        selectedOption =select.getFirstSelectedOption().getText();
         Assert.assertEquals(selectedOption,initialLanguage);
+
     }
 
     @AfterTest
