@@ -1,3 +1,4 @@
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,11 +22,14 @@ public class Zadanie8 {
 
     @Test
     public void checkIfAlertInfoIdDisplayed(){
-        WebElement boxMessage =  driver.findElement(By.xpath("//*[@id=\"hot-spot\"]"));
+        WebElement contextAlertMenu =  driver.findElement(By.xpath("//*[@id=\"hot-spot\"]"));
         Actions actions = new Actions(driver);
-        actions.contextClick(boxMessage).build().perform();
-        driver.switchTo().alert().accept();
+        actions.contextClick(contextAlertMenu).perform();
 
+        Alert alert = driver.switchTo().alert();
+        String alertText = alert.getText();
+        assert alertText.equals("You selected a context menu");
+        alert.accept();
     }
     @AfterTest
     public void afterTest(){
