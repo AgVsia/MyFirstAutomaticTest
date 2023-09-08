@@ -21,21 +21,24 @@ public class Zadanie9 {
     @Test
     public void checkIfTheUserIsLogged() {
         driver.navigate().to("https://the-internet.herokuapp.com/digest_auth");
-        Actions actions = new Actions(driver);
+
         WebElement usernameBox = driver.findElement(By.name("Username"));
         WebElement passwordBox = driver.findElement(By.name("Password"));
         WebElement loginButton = driver.findElement(By.name("Sign in"));
+        Actions actions = new Actions(driver);
+        actions.sendKeys(usernameBox, "admin").sendKeys(passwordBox, "admin").click(loginButton).perform();
 
-        actions.sendKeys(usernameBox, "admin").perform();
+        WebElement successMessage = driver.findElement(By.cssSelector("div#flash"));
+        String messageText = successMessage.getText();
+        assertEquals(messageText, "Congratulations! You must have the proper credentials.");
 
-        actions.sendKeys(passwordBox, "admin").perform();
-
-        actions.click(loginButton).perform();
     }
 
     @AfterTest
-    public void afterTest() {
-        //driver.close();
-        //driver.quit();
+
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
