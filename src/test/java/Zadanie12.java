@@ -14,25 +14,27 @@ public class Zadanie12 {
 
     @BeforeTest
     public void beforeTest() {
+
         driver = new ChromeDriver();
     }
 
     @Test
-    public void  testDropdownSelection() {
+    public void testDropdownSelection() {
         driver.get("https://the-internet.herokuapp.com/dropdown");
+
         WebElement dropdownElement = driver.findElement(By.id("dropdown"));
         Select dropdown = new Select(dropdownElement);
         dropdown.selectByValue("2");
-        WebElement selectedOption = dropdown.getFirstSelectedOption();
-        String selectedText = selectedOption.getText();
 
-        Assert.assertEquals(selectedText, "Option 2", "Nie wybrano opcji 2 z dropdown.");
+       String selectedText = dropdown.getFirstSelectedOption().getText();
+       Assert.assertEquals(selectedText, "Option 2", "Nie wybrano opcji 2 z dropdown.");
 
 
     }
+
     @AfterTest
-    public void afterTest(){
-      //  driver.quit();
-       // driver.close();
+    public void afterTest() {
+        //  driver.quit();
+        // driver.close();
     }
 }

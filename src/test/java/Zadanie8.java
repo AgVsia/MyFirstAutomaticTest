@@ -22,10 +22,9 @@ public class Zadanie8 {
 
     @Test
     public void checkIfAlertInfoIdDisplayed(){
-        WebElement contextAlertMenu =  driver.findElement(By.xpath("//*[@id=\"hot-spot\"]"));
+        WebElement contextAlertMenu =  driver.findElement((By.id("hot-spot")));
         Actions actions = new Actions(driver);
-        actions.contextClick(contextAlertMenu).perform();
-
+        actions.contextClick(contextAlertMenu).build().perform();
         Alert alert = driver.switchTo().alert();
         String alertText = alert.getText();
         assert alertText.equals("You selected a context menu");

@@ -16,7 +16,7 @@ public class Zadanie11 {
     @BeforeTest
     public void BeforeTest() {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
     }
 
     @Test
@@ -35,8 +35,8 @@ public class Zadanie11 {
 
     @AfterTest
     public void afterTest() {
-        driver.quit();
-        driver.quit();
+        //driver.quit();
+        //driver.quit();
     }
 }
 
